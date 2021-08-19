@@ -1,5 +1,6 @@
 const express = require('express');
 const webpush = require('web-push');
+const moment = require('moment');
 
 const publicVapidKey = "BPq4A4ShxxzqxjjmWyPW7hHwgi9ihdOyGegB87hhAg1OQjcSM1MKpQZKx4nRyTB_3T5oleuGyIUIA9RVuPxaABA";//process.env.PUBLIC_VAPID_KEY;
 const privateVapidKey = "B5D7HrcZtlnob8Age1rziulyJK-sIMEP8gFDa8RH1OQ";//process.env.PRIVATE_VAPID_KEY;
@@ -80,4 +81,6 @@ app.post('/trigger',function(req,res){
 
 app.listen(3000,function(){
   console.log("Server started at port 3000");
+  const time = moment().unix();
+  console.log(time);
 });
